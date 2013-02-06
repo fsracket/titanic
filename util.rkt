@@ -1,4 +1,4 @@
-#lang racket/base
+#lang typed/racket/base
 
 (require racket/list)
 
@@ -14,6 +14,10 @@
 ;; input where the key-fn applied to T produced the key.
 ;; the comparison function and key function are both optional
 ;; default for comparison function is #:eq, for key-fn identity
+
+
+
+(: group-by (All (A B) ([#:eq (A A -> Boolean)] [#:key (B -> A)] (Sequenceof B))) )
 (define (group-by #:eq [comp-fn equal?] #:key [key-fn values] seq)
   (let ([ht (make-hash)])
         

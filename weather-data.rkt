@@ -1,7 +1,8 @@
-#lang racket/base
+#lang typed/racket/base
 
 (provide (all-defined-out))
 
+(: data (Listof (Listof Symbol)))
 (define data
   (list
    '(sunny hot high false no)
@@ -19,4 +20,5 @@
    '(overcast hot normal false yes)
    '(rainy mild high true no)))
 
+(: headers (Listof Symbol))
 (define headers '(outlook temp humidity windy play))
